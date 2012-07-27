@@ -22,6 +22,7 @@ abstract public class UofMLaundryBaseActivity extends Activity {
 	
 	public static final String ROOM_CODE     = "com.schultetwins.umlaundry.ROOM_CODE";
 	public static final String BUILDING_CODE     = "com.schultetwins.umlaundry.BUILDING_CODE";
+	public static final String MACHINE_CODE     = "com.schultetwins.umlaundry.MACHINE_CODE";
 	
 	public static final String WIFI = "Wi-Fi";
     public static final String ANY = "Any";

@@ -18,6 +18,7 @@ import com.schultetwins.umlaundry.R;
 import com.schultetwins.umlaundry.UMLaundryDataAccessor;
 import com.schultetwins.umlaundry.UMLaundryDataAccessor.Machine;
 import com.schultetwins.umlaundry.adapters.MachineListAdapter;
+import com.schultetwins.umlaundry.services.UMLaundryStatusService;
 
 public class UofMLaundryMachinesActivity extends UofMLaundryBaseActivity{
 	private static final String TAG = "UofMMachineLaundryActivity";	
@@ -39,7 +40,7 @@ public class UofMLaundryMachinesActivity extends UofMLaundryBaseActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        selectedBuildingCode = intent.getIntExtra(UofMBuildingLaundryActivity.BUILDING_CODE, -1);
+        selectedBuildingCode = intent.getIntExtra(UofMLaundryBuildingsActivity.BUILDING_CODE, -1);
         selectedRoomCode = intent.getIntExtra(UofMLaundryRoomsActivity.ROOM_CODE, -1);
         
         // Assign the list view
@@ -55,7 +56,13 @@ public class UofMLaundryMachinesActivity extends UofMLaundryBaseActivity{
         buildingsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				// MT
+				Intent intent = new Intent(UofMLaundryMachinesActivity.this, UMLaundryStatusService.class);
+				Bundle machineData = new Bundle();
+				machineData.putInt(UofMLaundryBuildingsActivity.BUILDING_CODE, UofMLaundryMachinesActivity.this.selectedBuildingCode);
+				machineData.putInt(UofMLaundryRoomsActivity.ROOM_CODE, UofMLaundryMachinesActivity.this.selectedRoomCode);
+				machineData.putInt(UofMLaundryMachinesActivity.MACHINE_CODE, position);
+				intent.putExtras(machineData);
+				startService(intent);
 			}
 
         	

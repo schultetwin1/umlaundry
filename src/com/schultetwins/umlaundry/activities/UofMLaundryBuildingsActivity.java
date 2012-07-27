@@ -20,7 +20,7 @@ import com.schultetwins.umlaundry.UMLaundryDataAccessor;
 import com.schultetwins.umlaundry.UMLaundryDataAccessor.Building;
 import com.schultetwins.umlaundry.adapters.BuildingListAdapter;
 
-public class UofMBuildingLaundryActivity extends UofMLaundryBaseActivity {
+public class UofMLaundryBuildingsActivity extends UofMLaundryBaseActivity {
 	private static final String TAG = "UofMLaundryActivity";
 
     // Listview for buildings
@@ -43,7 +43,7 @@ public class UofMBuildingLaundryActivity extends UofMLaundryBaseActivity {
         buildingsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(UofMBuildingLaundryActivity.this, UofMLaundryRoomsActivity.class);
+				Intent intent = new Intent(UofMLaundryBuildingsActivity.this, UofMLaundryRoomsActivity.class);
 				intent.putExtra(BUILDING_CODE, buildingsListAdapter.getItem(position).code);
 				startActivity(intent);
 			}
@@ -79,7 +79,7 @@ public class UofMBuildingLaundryActivity extends UofMLaundryBaseActivity {
     	
         @Override
         protected List<Building> doInBackground(Integer... params) {
-        	UMLaundryDataAccessor dataAccessor = new UMLaundryDataAccessor(UofMBuildingLaundryActivity.this, force);
+        	UMLaundryDataAccessor dataAccessor = new UMLaundryDataAccessor(UofMLaundryBuildingsActivity.this, force);
             try {
                 return dataAccessor.getBuildings();
             } catch (IOException e) {

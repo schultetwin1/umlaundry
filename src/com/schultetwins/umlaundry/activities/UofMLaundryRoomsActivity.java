@@ -33,7 +33,7 @@ public class UofMLaundryRoomsActivity extends UofMLaundryBaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        selectedBuildingCode = intent.getIntExtra(UofMBuildingLaundryActivity.BUILDING_CODE, -1);
+        selectedBuildingCode = intent.getIntExtra(UofMLaundryBuildingsActivity.BUILDING_CODE, -1);
         
         // Assign the list view
         final ListView roomsListView = (ListView)findViewById(R.id.buildings_list);
@@ -49,7 +49,7 @@ public class UofMLaundryRoomsActivity extends UofMLaundryBaseActivity {
 
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(UofMLaundryRoomsActivity.this, UofMLaundryMachinesActivity.class);
-				intent.putExtra(UofMBuildingLaundryActivity.BUILDING_CODE, selectedBuildingCode);
+				intent.putExtra(UofMLaundryBuildingsActivity.BUILDING_CODE, selectedBuildingCode);
 				intent.putExtra(ROOM_CODE, roomsListAdapter.getItem(position).code);
 				startActivity(intent);
 			}

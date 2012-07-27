@@ -13,7 +13,7 @@
         android:label="@string/app_name" 
         android:theme="@android:style/Theme.Holo.Light">
         <activity
-            android:name="com.schultetwins.umlaundry.activities.UofMBuildingLaundryActivity"
+            android:name=".activities.UofMLaundryBuildingsActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +37,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
           </intent-filter>
         </activity>
+        <service android:name=".services.UMLaundryStatusService"></service>
+        <provider
+    		android:authorities="com.schultetwins.umlaundry.data.UMLaundryContentProvider"
+    		android:multiprocess="true"
+    		android:name="com.schultetwins.umlaundry.data.UMLaundryContentProvider">
+        </provider>
         
     </application>
 
