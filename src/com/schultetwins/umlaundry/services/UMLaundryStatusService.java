@@ -1,11 +1,7 @@
 package com.schultetwins.umlaundry.services;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.schultetwins.umlaundry.UMLaundryDataAccessor;
 import com.schultetwins.umlaundry.UMLaundryDataAccessor.Machine;
@@ -15,7 +11,6 @@ import com.schultetwins.umlaundry.activities.UofMLaundryRoomsActivity;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;

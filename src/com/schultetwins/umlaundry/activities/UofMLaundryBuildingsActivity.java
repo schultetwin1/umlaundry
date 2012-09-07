@@ -45,6 +45,8 @@ public class UofMLaundryBuildingsActivity extends UofMLaundryBaseActivity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(UofMLaundryBuildingsActivity.this, UofMLaundryRoomsActivity.class);
 				intent.putExtra(BUILDING_CODE, buildingsListAdapter.getItem(position).code);
+				intent.putExtra(WIFI_STATUS, wifiConnected);
+				intent.putExtra(MOBILE_STATUS, mobileConnected);
 				startActivity(intent);
 			}
 

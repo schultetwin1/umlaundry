@@ -40,11 +40,9 @@ public class MachineRowView extends RelativeLayout {
 		this.machineNumberTextView.setText(machine.ID+"");
 		this.machineTypeTextView.setText(machine.type);
 		this.machineStatusTextView.setText(machine.getStatus());
-		this.setClickable(true);
 		if (machine.getStatus().equals("In Use")) {
 			this.machineStatusTextView.setTextColor(Color.RED);
 			this.machineStatusTextView.setText(machine.getTimeRemaining() + ":00");
-			// this.setClickable(true);
 		} else if (machine.getStatus().equals("Available")) {
 			this.machineStatusTextView.setTextColor(Color.GREEN);
 		} else if (machine.getStatus().equals("Offline")) {

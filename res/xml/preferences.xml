@@ -25,9 +25,4 @@
         android:entries="@array/listArray"
         android:entryValues="@array/listValues"
      />
-    <CheckBoxPreference
-        android:title="Show Summaries"
-        android:defaultValue="false"
-        android:summary="Show a summary for each link."
-        android:key="summaryPref" />
 </PreferenceScreen>

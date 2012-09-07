@@ -15,6 +15,7 @@ public class SettingsActivity extends PreferenceActivity implements
         super.onCreate(savedInstanceState);
 
         // Loads the XML preferences file.
+        // Should use SettingFragments now
         addPreferencesFromResource(R.xml.preferences);
     }
 

@@ -1,6 +1,5 @@
 package com.schultetwins.umlaundry.adapters;
 
-import com.schultetwins.umlaundry.UMLaundryDataAccessor;
 import com.schultetwins.umlaundry.UMLaundryDataAccessor.Machine;
 import com.schultetwins.umlaundry.views.MachineRowView;
 

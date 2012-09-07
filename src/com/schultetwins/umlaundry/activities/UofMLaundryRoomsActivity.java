@@ -34,7 +34,8 @@ public class UofMLaundryRoomsActivity extends UofMLaundryBaseActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         selectedBuildingCode = intent.getIntExtra(UofMLaundryBuildingsActivity.BUILDING_CODE, -1);
-        
+        wifiConnected = intent.getBooleanExtra(WIFI_STATUS, false);
+        mobileConnected = intent.getBooleanExtra(MOBILE_STATUS, false); 
         // Assign the list view
         final ListView roomsListView = (ListView)findViewById(R.id.buildings_list);
         

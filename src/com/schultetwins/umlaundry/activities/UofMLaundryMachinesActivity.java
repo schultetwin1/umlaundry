@@ -64,8 +64,6 @@ public class UofMLaundryMachinesActivity extends UofMLaundryBaseActivity{
 				intent.putExtras(machineData);
 				startService(intent);
 			}
-
-        	
         });
         
         List<Machine> machines = new ArrayList<Machine>();
@@ -75,7 +73,7 @@ public class UofMLaundryMachinesActivity extends UofMLaundryBaseActivity{
     
     @Override
     public void onResume() {
-    	super.onRestart();
+    	super.onResume();
     	this.handler = new Handler();
         this.runnable = new Runnable() {
 

@@ -20,9 +20,11 @@ import com.schultetwins.umlaundry.R;
 
 abstract public class UofMLaundryBaseActivity extends Activity {
 	
-	public static final String ROOM_CODE     = "com.schultetwins.umlaundry.ROOM_CODE";
+	public static final String ROOM_CODE         = "com.schultetwins.umlaundry.ROOM_CODE";
 	public static final String BUILDING_CODE     = "com.schultetwins.umlaundry.BUILDING_CODE";
-	public static final String MACHINE_CODE     = "com.schultetwins.umlaundry.MACHINE_CODE";
+	public static final String MACHINE_CODE      = "com.schultetwins.umlaundry.MACHINE_CODE";
+	public static final String WIFI_STATUS       = "com.schultetwins.umlaundry.WIFI_STATUS";
+	public static final String MOBILE_STATUS     = "com.schultetwins.umlaundry.MOBILE_STATUS";
 	
 	public static final String WIFI = "Wi-Fi";
     public static final String ANY = "Any";
@@ -131,6 +133,12 @@ abstract public class UofMLaundryBaseActivity extends Activity {
         case R.id.refresh:
                 loadPage(true /*Force Refresh*/);
                 return true;
+        case android.R.id.home:
+            // app icon in action bar clicked; go home
+            Intent intent = new Intent(this, UofMLaundryBuildingsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            return true;
         default:
                 return super.onOptionsItemSelected(item);
         }
@@ -163,7 +171,6 @@ abstract public class UofMLaundryBaseActivity extends Activity {
                // to true. This causes the display to be refreshed when the user
                // returns to the app.
                refreshDisplay = true;
-               Toast.makeText(context, R.string.wifi_connected, Toast.LENGTH_SHORT).show();
 
                // If the setting is ANY network and there is a network connection
                // (which by process of elimination would be mobile), sets refreshDisplay to true.
